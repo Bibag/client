@@ -1,0 +1,9 @@
+.form-wrapper {
+  .form {
+    :global {
+      .label {
+        color: darkcyan !important;
+      }
+    }
+  }
+}

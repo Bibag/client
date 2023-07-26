@@ -1,0 +1,26 @@
+.avatar-wrapper {
+  text-align: center;
+  margin-bottom: 16px;
+
+  .avatar {
+    cursor: pointer;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: all 0.3s;
+
+    &:hover {
+      box-shadow: 0 0 8px rgba(0, 139, 139, 0.534);
+    }
+  }
+
+  .upload-button {
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      font-weight: 700;
+    }
+  }
+}

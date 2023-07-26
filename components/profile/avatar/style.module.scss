@@ -1,0 +1,12 @@
+.avatar-wrapper {
+  text-align: center;
+  margin-bottom: 16px;
+
+  .avatar {
+    cursor: pointer;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}

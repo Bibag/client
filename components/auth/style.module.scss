@@ -1,0 +1,22 @@
+.form-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 64px 0px;
+
+  .form {
+    min-width: 500px;
+    padding: 32px;
+    color: darkcyan;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: 0px 0px 16px rgba($color: black, $alpha: 0.3);
+
+    :global {
+      .label {
+        color: darkcyan !important;
+      }
+    }
+  }
+}
