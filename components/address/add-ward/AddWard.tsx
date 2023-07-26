@@ -23,6 +23,10 @@ const AddWardFC: FC = () => {
       if (response && response.data) {
         setName('');
         setCode('');
+        setCityCode('');
+        setDistrictCode('');
+        setDonVi('');
+        setError('');
       }
     }
   };

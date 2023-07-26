@@ -23,6 +23,10 @@ const AddDistrictFC: FC = () => {
       if (response && response.data) {
         setName('');
         setCode('');
+        setCityCode('');
+        setDonVi('');
+        setFullName('');
+        setError('');
       }
     }
   };

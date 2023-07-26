@@ -14,6 +14,7 @@ const AddCityFC: FC = () => {
       if (response && response.data) {
         setName('');
         setCode('');
+        setError('');
       }
     }
   };
