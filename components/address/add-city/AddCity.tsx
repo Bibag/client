@@ -11,7 +11,10 @@ const AddCityFC: FC = () => {
   const handleSubmit = async () => {
     if (name && code) {
       const response = await post('/api/address/city', { name, code });
-      console.log(response);
+      if (response && response.data) {
+        setName('');
+        setCode('');
+      }
     }
   };
 

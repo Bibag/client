@@ -20,7 +20,10 @@ const AddDistrictFC: FC = () => {
         don_vi: donVi,
         full_name: fullName,
       });
-      console.log(response);
+      if (response && response.data) {
+        setName('');
+        setCode('');
+      }
     }
   };
 

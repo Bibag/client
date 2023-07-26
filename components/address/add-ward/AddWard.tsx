@@ -20,7 +20,10 @@ const AddWardFC: FC = () => {
         city_code: cityCode,
         don_vi: donVi,
       });
-      console.log(response);
+      if (response && response.data) {
+        setName('');
+        setCode('');
+      }
     }
   };
 
