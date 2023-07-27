@@ -17,7 +17,7 @@ const AddressFC: FC = () => {
   const [inputAddress, setInputAddress] = useState<string>('');
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [searchKey, setSearchKey] = useState<string>(searchOptions[0].value);
-  const [searchResult, setSearchResult] = useState<SearchData>([]);
+  const [searchResult, setSearchResult] = useState<SearchData[]>([]);
 
   useEffect(() => {
     let ignore = false;
@@ -77,9 +77,10 @@ const AddressFC: FC = () => {
   }, [city, district, ward, address]);
 
   const handleSearch = () => {
+    setSearchResult([]);
     let ignore = false;
     const searchAddress = async () => {
-      const res = await get<SearchData>('/api/address/search', { search_key: searchKey, search_term: searchTerm });
+      const res = await get<SearchData[]>('/api/address/search', { search_key: searchKey, search_term: searchTerm });
       if (res && res.data && !ignore) {
         setSearchResult(res.data);
       }

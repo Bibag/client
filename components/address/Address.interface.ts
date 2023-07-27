@@ -24,4 +24,6 @@ export interface OptionData {
   label: string;
 }
 
-export type SearchData = CityData[] | DistrictData[] | WardData[];
+export interface SearchData {
+  value: string;
+}

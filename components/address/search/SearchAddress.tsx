@@ -11,7 +11,7 @@ interface Props {
   onChangeSearchTerm: (value: string) => void;
   onChangeSearchKey: (value: string) => void;
   onSearch: () => void;
-  searchResult: SearchData;
+  searchResult: SearchData[];
 }
 
 const SearchAddress: FC<Props> = ({
@@ -39,9 +39,9 @@ const SearchAddress: FC<Props> = ({
         onChange={(value) => onChangeSearchTerm(value)}
       />
       <Button onClick={() => onSearch()}>Search</Button>
-      <div className="search-result">
+      <div className="search-result" style={{ marginTop: '1rem' }}>
         {searchResult?.map((result) => (
-          <div key={result.name}>{result.full_name ? result.full_name : result.name}</div>
+          <div key={result.value}>{result.value}</div>
         ))}
       </div>
     </div>
