@@ -106,27 +106,36 @@ const AddressFC: FC = () => {
         <CustomSelect
           name="city"
           label="Tỉnh/Thành phố"
-          options={cities.map((city) => {
-            return { value: city.code, label: city.name };
-          })}
+          options={
+            cities.length &&
+            cities.map((city) => {
+              return { value: city.code, label: city.name };
+            })
+          }
           value={city}
           onChange={setCity}
         />
         <CustomSelect
           name="district"
           label="Quận/Huyện"
-          options={districts.map((district) => {
-            return { value: district.code, label: district.name };
-          })}
+          options={
+            districts.length &&
+            districts.map((district) => {
+              return { value: district.code, label: district.name };
+            })
+          }
           value={district}
           onChange={setDistrict}
         />
         <CustomSelect
           name="ward"
           label="Xã/Phường"
-          options={wards.map((ward) => {
-            return { value: ward.code, label: ward.name };
-          })}
+          options={
+            wards.length &&
+            wards.map((ward) => {
+              return { value: ward.code, label: ward.name };
+            })
+          }
           value={ward}
           onChange={setWard}
         />
