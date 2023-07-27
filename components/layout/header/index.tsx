@@ -5,9 +5,10 @@ import { userApi } from '@/apis/user';
 import { RouteNames } from '@/consts/route-names';
 import { useActions } from '@/hooks/useActions';
 import { useTypedSelector } from '@/hooks/useTypedSelector';
+import style from './style.module.scss';
 
 const Header: FC = () => {
-  const { id } = useTypedSelector((state) => state.user.data);
+  const { id, avatar, email, name } = useTypedSelector((state) => state.user.data);
 
   const { signOutRequest } = useActions();
 
@@ -68,6 +69,19 @@ const Header: FC = () => {
 
         <div className="navbar-end">
           <div className="navbar-item">
+            {!!id && (
+              <div className={style['user-bar']}>
+                <div className={style['user-profile']} onClick={() => router.push(RouteNames.Profile)}>
+                  {avatar ? (
+                    <div className={style['avatar-wrapper']}>
+                      <img className={style['avatar']} src={avatar} alt="" />
+                    </div>
+                  ) : (
+                    <div className="button mr-3">{name || email}</div>
+                  )}
+                </div>
+              </div>
+            )}
             <div className="buttons">
               {!id ? (
                 <>
